@@ -2,12 +2,12 @@ import image from '../../assets/icons/emoji_brocoli.png'
 import styles from '../../styles/Connexion.module.css'
 import {useState} from "react";
 
-export default function Connexion() {
-    const [name, setName] = useState('');
+export default function FormFirstname() {
+    const [firstName, setFirstName] = useState('');
 
-    function getName() {
-        // setName();
-        console.log(name);
+    function getFirstName() {
+        // Récupérer le prénom
+        console.log("Le prénom est ", firstName);
     }
 
     return (
@@ -18,9 +18,18 @@ export default function Connexion() {
                 <img className={styles.imgConnexion} src={image} alt="Emoji brocoli" />
 
                 <h1 className={styles.titre}>Bienvenue sur Adalicious</h1>
-                <p className={styles.texteIntro}>Pour Commencer, peux-tu me donner ton prénom : </p>
-                <input className={styles.champInput}/>
-                <button className={styles.validateBtn} onClick={getName}>Valider</button>
+                <label className={styles.texteIntro}>
+                    Pour Commencer, peux-tu me donner ton prénom :
+
+                    <input
+                        className={styles.champInput}
+                        type="text" name='firstname'
+                        placeholder='Gwenaëlle'
+                        value={firstName}
+                        onChange={e => setFirstName(e.target.value)}/>
+                </label>
+
+                <button type='submit' className={styles.validateBtn} onClick={getFirstName}>Valider</button>
             </div>
         </>
     )

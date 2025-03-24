@@ -16,12 +16,22 @@
     margin: 1rem 0;
 }
 
+.formFirstname {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .texteIntro {
     margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .champInput {
     padding: 0.5rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;

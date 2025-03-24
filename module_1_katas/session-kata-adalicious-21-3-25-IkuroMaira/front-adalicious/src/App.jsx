@@ -1,11 +1,11 @@
 import './App.css'
-import Connexion from "./pages/users/Connexion.jsx";
+import FormFirstname from "./pages/users/Connexion.jsx";
 
 function App() {
 
   return (
     <>
-        <Connexion />
+        <FormFirstname />
     </>
   )
 }
