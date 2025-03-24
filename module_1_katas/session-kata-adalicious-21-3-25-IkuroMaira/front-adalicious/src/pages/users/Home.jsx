@@ -1,5 +1,5 @@
 import image from '../../assets/icons/emoji_brocoli.png'
-import styles from '../../styles/Connexion.module.css'
+import styles from '../../styles/Home.module.css'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

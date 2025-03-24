@@ -4,7 +4,6 @@ export default function Menu() {
     return (
         <>
             <CardPlate />
-            Ici le menu
         </>
     )
 }
