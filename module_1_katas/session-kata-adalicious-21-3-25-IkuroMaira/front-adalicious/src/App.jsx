@@ -1,11 +1,18 @@
 import './App.css'
-import FormFirstname from "./pages/users/Connexion.jsx";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/users/Home.jsx";
+import Menu from "./pages/users/Menu.jsx";
 
 function App() {
 
   return (
     <>
-        <FormFirstname />
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/menu" element={<Menu />} />
+            </Routes>
+        </BrowserRouter>
     </>
   )
 }
