@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #d3f4fb;
+    border: solid #40BCD8;
+    width: 100%;
+    height: 5rem;
+}
+
+.title {
+    /* Pour debugger */
+    /*background-color: brown;*/
+    margin: 2rem;
+}
