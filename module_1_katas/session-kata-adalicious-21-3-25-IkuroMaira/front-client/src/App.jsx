@@ -21,6 +21,23 @@ function App() {
     return (
         <>
             <BrowserRouter>
+                <div>
+                    {/* Affichage des données pour test */}
+                    {(typeof backendData.message === 'undefined') ? (
+                        <p>Chargement des données...</p>
+                    ) : (
+                        <div>
+                            <h2>Données du serveur:</h2>
+                            <p>{backendData.message}</p>
+                            <ul>
+                                {backendData.items && backendData.items.map((item, i) => (
+                                    <li key={i}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                </div>
+
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/menu" element={<MenuPage />} />

@@ -14,7 +14,7 @@ const port = 5002;
 
 // Middleware pour permettre les requêtes CORS (Cross-Origin Resource Sharing)
 server.use(cors({
-    origin: 'http://localhost:3000' // URL de mon frontend React
+    origin: 'http://localhost:5173' // URL de mon frontend React
 }))
 
 // Middleware pour parser le JSON
