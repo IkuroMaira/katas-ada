@@ -7,7 +7,7 @@ function App() {
 
     const [backendData, setBackendData] = useState([{}]);
 
-    useEffect(() => {
+    /*useEffect(() => {
         // On indique la route
         fetch('/api').then(
             response => response.json()
@@ -16,13 +16,13 @@ function App() {
                 setBackendData(data)
             }
         )
-    }, [])
+    }, [])*/
 
     return (
         <>
             <BrowserRouter>
-                <div>
-                    {/* Affichage des données pour test */}
+                {/*<div>
+                     Affichage des données pour test
                     {(typeof backendData.message === 'undefined') ? (
                         <p>Chargement des données...</p>
                     ) : (
@@ -36,7 +36,7 @@ function App() {
                             </ul>
                         </div>
                     )}
-                </div>
+                </div>*/}
 
                 <Routes>
                     <Route path="/" element={<HomePage />} />
