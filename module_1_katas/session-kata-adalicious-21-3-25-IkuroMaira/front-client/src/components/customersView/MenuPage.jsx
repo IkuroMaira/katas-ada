@@ -21,9 +21,12 @@ export default function MenuPage() {
             <Header />
 
             <h1 className={styles.firstNameTitle}>Bonjour {/*{firstName}*/}</h1>
-            {menu.map((plate) => (
-                <CardPlate key={plate.id} plate={plate} />
-            ))}
+
+            <div className={styles.containerMenu}>
+                {menu.map((plate) => (
+                    <CardPlate key={plate.id} plate={plate} />
+                ))}
+            </div>
         </>
     )
 }
