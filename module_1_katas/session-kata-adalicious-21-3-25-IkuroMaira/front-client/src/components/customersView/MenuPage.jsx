@@ -13,14 +13,24 @@ export default function MenuPage() {
 
     // Les états pour gérer le chargement
         // Peut-être créer un composant qui va gérer les chargements des données dans les pages
-    // const [loading, setLoading] = useState(true);
-    // const [menuItems, setMenuItems] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [menuItems, setMenuItems] = useState([]);
 
     useEffect(() => {
+        // Ici on charge les données depuis le serveur/API
         const fetchMenuData = async () => {
-            const response = await fetch('http://localhost:5002/menu');
-            const data = await response.json();
-            setMenu(data);
+            // TODO: ajouter une gestion d'erreur
+            try {
+                const response = await fetch('http://localhost:5002/menu');
+                const data = await response.json();
+
+                setMenu(data);
+
+                setLoading(false);
+            } catch (error) {
+                console.log("Erreur lors du chargement du Menu: ", error);
+                setLoading(false);
+            }
         };
 
         fetchMenuData();
@@ -32,11 +42,17 @@ export default function MenuPage() {
 
             <h1 className={styles.firstNameTitle}>Bonjour {firstName}</h1>
 
-            <div className={styles.containerMenu}>
-                {menu.map((plate) => (
-                    <CardPlate key={plate.id} plate={plate} />
-                ))}
-            </div>
+            {loading ?
+                <div className={styles.loadingContainer}>
+                    <p>Chargement du menu en cours...</p>
+                </div>
+                :
+                <div className={styles.containerMenu}>
+                    {menu.map((plate) => (
+                        <CardPlate key={plate.id} plate={plate} />
+                    ))}
+                </div>
+            }
         </>
     )
 }
