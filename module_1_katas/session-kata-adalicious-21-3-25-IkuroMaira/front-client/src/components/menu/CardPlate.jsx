@@ -4,11 +4,12 @@ import styles from './CardPlate.module.css';
 export default function CardPlate({ plate }) {
     return (
         <>
-            <div className={styles.platCard}>
-                <img className={styles.platImage} src={plate.image} alt="Nom du plat"/>
-                <div className={styles.platInfos}>
-                    <h1 className={styles.platTitle}>{plate.name}</h1>
-                    <p className={styles.platDescription}>{plate.description}</p>
+            <div className={styles.plateCard}>
+                <img className={styles.plateImage} src={plate.image} alt={plate.name}/>
+                <div className={styles.plateInfos}>
+                    <h1 className={styles.plateTitle}>{plate.name}</h1>
+                    <p className={styles.plateDescription}>{plate.description}</p>
+                    <p className={styles.platePrice}>{plate.price}€</p>
                     <button className={styles.btnOrder}>Commander</button>
                 </div>
             </div>

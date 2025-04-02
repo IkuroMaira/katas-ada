@@ -6,12 +6,6 @@ import { useNavigate } from "react-router-dom";
 export default function HomePage() {
     const [firstName, setFirstName] = useState('');
 
-    // Récupérer le prénom
-    // Avec le formulaire ne me sert plus à rien
-    // function getFirstName() {
-    //     console.log("Le prénom est ", firstName);
-    // }
-
     // Changer de page
     const navigate = useNavigate();
 
@@ -22,8 +16,8 @@ export default function HomePage() {
         event.preventDefault();
 
         if(firstName) {
-            console.log("Prénom: ", firstName);
-            navigate('/menu');
+            // console.log("Prénom: ", firstName);
+            navigate('/menu', {state: { firstName } });
         } else {
             const errorMessage = "Veuillez rentrer votre prénom."
             console.log("Le prénom n'est pas rentré !")
