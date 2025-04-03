@@ -19,7 +19,6 @@ export default function MenuPage() {
     useEffect(() => {
         // Ici on charge les données depuis le serveur/API
         const fetchMenuData = async () => {
-            // TODO: ajouter une gestion d'erreur
             try {
                 const response = await fetch('http://localhost:5002/menu');
                 const data = await response.json();

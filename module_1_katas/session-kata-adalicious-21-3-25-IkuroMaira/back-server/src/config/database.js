@@ -1,3 +1,4 @@
+// Configuration de la connexion de la bade de données
 const { Pool } = require('pg');
 const {text} = require("express");
 require('dotenv').config();

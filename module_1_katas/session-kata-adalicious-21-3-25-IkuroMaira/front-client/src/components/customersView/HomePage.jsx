@@ -6,6 +6,25 @@ import { useNavigate } from "react-router-dom";
 export default function HomePage() {
     const [firstName, setFirstName] = useState('');
 
+    const addUser = async (firstName) => {
+        try {
+            const res = await fetch('http://localhost:5002/api/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ firstName })
+            });
+
+
+            const data = await res.json();
+            console.log('Utilisateur ajouté avec succès:', data);
+            return data;
+        } catch (error) {
+            console.log('Erreur:', error);
+        }
+    }
+
     // Changer de page
     const navigate = useNavigate();
 
@@ -18,6 +37,7 @@ export default function HomePage() {
         if(firstName) {
             // console.log("Prénom: ", firstName);
             navigate('/menu', {state: { firstName } });
+            addUser(firstName);
         } else {
             const errorMessage = "Veuillez rentrer votre prénom."
             console.log("Le prénom n'est pas rentré !")
