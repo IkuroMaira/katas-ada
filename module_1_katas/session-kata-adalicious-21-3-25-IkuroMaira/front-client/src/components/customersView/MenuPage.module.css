@@ -1,5 +1,14 @@
+.containerWelcome {
+    display: flex;
+}
+
 .firstNameTitle {
     margin: 2rem;
+    width: 20rem;
+}
+
+.detailsOrder {
+    width: 100%;
 }
 
 .containerMenu {

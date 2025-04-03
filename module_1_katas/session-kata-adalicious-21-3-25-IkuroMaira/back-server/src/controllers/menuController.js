@@ -11,6 +11,15 @@ const MenuController = {
         } catch (error) {
             console.log("Erreur lors de la récupération du menu", error);
         }
+    },
+
+    getPlateById: async (req, res) => {
+        try {
+            const plate = await MenuModel.getPlateById(id);
+            res.json(plate);
+        } catch (error) {
+
+        }
     }
 }
 
