@@ -3,12 +3,14 @@ import { useNavigate } from "react-router-dom";
 import image from '../../assets/icons/emoji_brocoli.png'
 import styles from './HomePage.module.css'
 
+const port= 5002;
+
 export default function HomePage() {
     const [firstName, setFirstName] = useState('');
 
     const addUser = async (firstName) => {
         try {
-            const res = await fetch('http://localhost:5002/api/users', {
+            const res = await fetch(`http://localhost:${port}/api/users`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -34,13 +36,13 @@ export default function HomePage() {
         // Aller comprendre mieux ce truc du comportement par défaut, React en parle aussi
         event.preventDefault();
 
-        if(firstName) {
+        if (firstName) {
             // console.log("Prénom: ", firstName);
-            navigate('/menu', {state: { firstName } });
-            addUser(firstName);
+            navigate('/menu', { state: { firstName } });
+            addUser(firstName); // Pour envoyer au back
         } else {
-            const errorMessage = "Veuillez rentrer votre prénom."
-            console.log("Le prénom n'est pas rentré !")
+            const errorMessage = "Veuillez rentrer votre prénom.";
+            console.log("Le prénom n'est pas rentré !");
         }
     }
 

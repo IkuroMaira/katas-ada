@@ -1,5 +1,4 @@
 const MenuModel = require('../models/menuModel');
-const db = require("../config/database");
 
 const MenuController = {
     // Récupérer tous les plats
@@ -15,10 +14,21 @@ const MenuController = {
 
     getPlateById: async (req, res) => {
         try {
+            const id = parseInt(req.params.id);
+
+            if (isNaN(id)) {
+                console.log("Id invalide");
+            }
+
             const plate = await MenuModel.getPlateById(id);
+
+            if (!plate) {
+                console.log(`Le plat avec l'ID ${id} n'est pas trouvé`);
+            }
+
             res.json(plate);
         } catch (error) {
-
+            console.log("Erreur lors de la récupération du plat", error);
         }
     }
 }

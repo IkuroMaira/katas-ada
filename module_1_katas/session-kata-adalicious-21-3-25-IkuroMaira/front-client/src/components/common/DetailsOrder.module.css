@@ -1,3 +1,15 @@
-.title {
+.containerOrder {
     margin: 2rem;
+    border: solid #40BCD8;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.listOrder {
+    margin: 0.5rem;
 }
