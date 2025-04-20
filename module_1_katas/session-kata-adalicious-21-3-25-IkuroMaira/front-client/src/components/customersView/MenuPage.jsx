@@ -5,7 +5,7 @@ import CardPlate from "../menu/CardPlate.jsx";
 import Header from "../common/Header.jsx";
 import DetailsOrder from "../common/DetailsOrder.jsx";
 
-const port= 5002;
+const API_URL = import.meta.env.VITE_SERVER_UR; // Dans le cas de Vite, on n'utilise l'import avec process de React
 
 export default function MenuPage() {
     const [menu, setMenu] = useState([]);
@@ -22,7 +22,8 @@ export default function MenuPage() {
         // Ici, on charge les données depuis le serveur/API
         const fetchMenuData = async () => {
             try {
-                const res = await fetch(`http://localhost:${port}/menu`);
+                // const res = await fetch(`${API_URL}/menu`);
+                const res = await fetch(`http://localhost:5002/menu`);
                 const data = await res.json();
 
                 setMenu(data);

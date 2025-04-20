@@ -15,7 +15,7 @@ const port = process.env.SERVER_PORT; // Définir le port sur lequel le serveur 
 
 // Middleware pour permettre les requêtes CORS (Cross-Origin Resource Sharing)
 server.use(cors({
-    origin: 'http://localhost:5173' // URL de mon frontend React
+    origin: 'http://localhost:5012' // URL de mon frontend React
 }))
 
 server.use(express.json()); // Middleware pour parser le JSON

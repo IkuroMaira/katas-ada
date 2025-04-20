@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import image from '../../assets/icons/emoji_brocoli.png'
 import styles from './HomePage.module.css'
 
-const port= 5002;
+const API_URL = import.meta.env.VITE_SERVER_UR; // Dans le cas de Vite, on utilise l'import avec process de React
 
 export default function HomePage() {
     const [firstName, setFirstName] = useState('');
 
     const addUser = async (firstName) => {
         try {
-            const res = await fetch(`http://localhost:${port}/api/users`, {
+            const res = await fetch(`${API_URL}/api/users`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
