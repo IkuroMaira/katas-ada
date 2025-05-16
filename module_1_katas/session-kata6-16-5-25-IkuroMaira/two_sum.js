@@ -1,3 +1,4 @@
+// TWO SUM
 // Tu as une liste de nombres appelée `number` (par exemple : `[2, 7, 11, 15]`) et un nombre cible appelé `target` (par exemple : `9`).
 //
 // Écris une function `twoSum()` qui permet de **retrouver deux nombres dans la liste qui, une fois additionnés, donnent exactement le total `target`**.
