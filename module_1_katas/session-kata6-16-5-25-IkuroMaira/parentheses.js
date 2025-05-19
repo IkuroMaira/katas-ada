@@ -57,3 +57,9 @@ isValid(str2);
 const str3 = "([])"
 isValid(str3);
 // retourne `true`
+
+// Calculer la longueur du tableau: on doit trouver un nombre pair
+// Si le nombre est pair on regarde la première parenthèse
+// Si la longueur est = à 2, on rgarde que la deuxième position.
+// On vérifie la parenthèse en deuxième position et selon celle de la fin du tableau
+// Selon la parenthèse en deuxième position ... hum pas sûre de ce que je dis là
