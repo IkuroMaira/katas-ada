@@ -17,21 +17,29 @@ function isValid(str) {
     }
 
     const strArray = str.split("");
-    console.log(strArray);
+    console.log("Premier tableau", strArray);
 
     const comparArray = [];
+    const pairs = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    };
 
-    const parenthesesComparaison = {
-        "(" : ")",
-        "[" : "]",
-        "{" : "}"
-    }
-
-    for (let i = 0; i <= strArray.length; i++) {
+    for (let i = 0; i < strArray.length; i++) {
         comparArray.push(strArray[i]);
+        // console.log(strArray[i]);
     }
 
-    console.log(comparArray);
+    for (let i = 1; i < strArray.length; i++) {
+        if (!strArray[i-1] === comparArray[i]) {
+            console.log(false);
+            return false;
+        }
+    }
+
+    console.log(true);
+    return true
 }
 
 const str = "()"
