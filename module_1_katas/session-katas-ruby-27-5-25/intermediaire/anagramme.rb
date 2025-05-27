@@ -4,6 +4,7 @@
 # - ajouter après avoir vu sur internet la gestion des majuscules
 
 def anagramme(firstword, secondword)
+  puts "#######################"
   puts "# Ma fonction anagramme"
 
   if firstword.length != secondword.length
@@ -14,7 +15,7 @@ def anagramme(firstword, secondword)
     puts firstword.downcase.chars.sort.join
     puts secondword.downcase.chars.sort.join
 
-    if firstword.chars.sort.join === secondword.chars.sort.join
+    if firstword.downcase.chars.sort.join === secondword.downcase.chars.sort.join
       puts true
       puts "Ce sont des anagrammes"
       return true

@@ -17,3 +17,5 @@ end
 giveAge("Gwen", 31)
 giveAge("Ludo", 30)
 giveAge("Laurianne", 25)
+
+# Faire une version avec un fichier HTML qui demande et récupère les réponses
