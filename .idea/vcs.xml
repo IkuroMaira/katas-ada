@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module_1_katas/session-kata6-16-5-25-IkuroMaira/kata-parenthesis" vcs="Git" />
   </component>
 </project>
