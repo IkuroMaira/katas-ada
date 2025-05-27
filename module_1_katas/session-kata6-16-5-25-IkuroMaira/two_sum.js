@@ -46,3 +46,26 @@ const numbers2 = [3, 3]
 const target2 = 6
 twoSum(numbers2, target2);
 // retourne [0, 1]
+
+// Correction avec complexité O(n):
+// function twoSum(numbers, target){
+//     let seen = {}
+//
+//     for (let i =0; i< numbers.length; i++){
+//         let current = numbers[i]
+//         console.log("Numéro actuel", current)
+//
+//         let complement = target-current
+//         console.log("Numéro complémentaire", complement)
+//
+//         if(seen[complement] !== undefined){
+//             return [seen[complement], i]
+//         }
+//
+//         seen[current] = i
+//         console.log(seen)
+//     }
+// }
+//
+// const numbers = [2, 11, 15, 7]
+// console.log(twoSum(numbers, 9))
