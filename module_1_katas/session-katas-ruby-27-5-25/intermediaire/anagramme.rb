@@ -4,7 +4,7 @@
 # - ajouter après avoir vu sur internet la gestion des majuscules
 
 def anagramme(firstword, secondword)
-  puts "#######################"
+  puts "-----------------------"
   puts "# Ma fonction anagramme"
 
   if firstword.length != secondword.length
