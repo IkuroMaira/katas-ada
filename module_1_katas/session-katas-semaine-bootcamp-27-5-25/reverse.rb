@@ -16,5 +16,5 @@ def reverse(arr)
   return array_to_fill
 end
 
-reverse(array)
+reverse([1, 2, 3, 4, 5])
 
