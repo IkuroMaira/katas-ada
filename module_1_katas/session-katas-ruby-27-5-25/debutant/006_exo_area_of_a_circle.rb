@@ -1,6 +1,6 @@
 def area_of_a_circle(rayon)
   calcul = rayon * rayon * Math::PI
-  puts calcul
+  return calcul
 end
 
-area_of_a_circle(3)
+puts area_of_a_circle(3)
