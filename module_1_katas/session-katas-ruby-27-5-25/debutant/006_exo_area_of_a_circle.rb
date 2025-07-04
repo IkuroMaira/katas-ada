@@ -3,4 +3,4 @@ def area_of_a_circle(rayon)
   return calcul
 end
 
-puts area_of_a_circle(3)
+puts sessarea_of_a_circle(3)
