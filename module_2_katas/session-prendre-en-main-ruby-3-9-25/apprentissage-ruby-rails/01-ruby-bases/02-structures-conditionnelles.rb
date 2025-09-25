@@ -91,6 +91,16 @@ puts "\n=== EXERCICES ==="
 puts "1. Écrivez un programme qui détermine la saison selon le mois"
 mois = 7
 # Votre code ici (1-3: hiver, 4-6: printemps, 7-9: été, 10-12: automne)
+mois = 7
+if mois >=1 && mois <= 3
+  puts 'winter'
+elsif mois >= 4 && mois <=6
+  puts 'autumn'
+elsif mois >= 7 && mois <=9
+  puts " summer"
+else
+  puts 'spring'
+end
 
 puts "2. Créez un système de notation d'un examen (0-100 points)"
 points = 78
@@ -99,6 +109,11 @@ points = 78
 puts "3. Vérifiez si un nombre est pair ou impair"
 nombre = 17
 # Votre code ici
+if nombre % 2 === 0
+  puts 'It is a pair number'
+else
+  puts 'It is impair number'
+end
 
 puts "4. Déterminez la catégorie d'âge d'une personne"
 age_personne = 35
