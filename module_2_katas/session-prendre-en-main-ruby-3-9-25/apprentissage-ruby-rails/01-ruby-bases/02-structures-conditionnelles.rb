@@ -95,16 +95,44 @@ mois = 7
 if mois >=1 && mois <= 3
   puts 'winter'
 elsif mois >= 4 && mois <=6
-  puts 'autumn'
-elsif mois >= 7 && mois <=9
-  puts " summer"
-else
   puts 'spring'
+elsif mois >= 7 && mois <=9
+  puts 'summer'
+else
+  puts 'automn'
 end
+
+month = 3
+season = case month
+         when 1..3
+           'winter'
+         when 4..6
+          'spring'
+         when 7..9
+          'summer'
+         else
+           'winter'
+         end
+
+puts "Month #{month}: #{season}"
 
 puts "2. Créez un système de notation d'un examen (0-100 points)"
 points = 78
 # Votre code ici (A: 90-100, B: 80-89, C: 70-79, D: 60-69, F: 0-59)
+notation = case points
+           when 90...100
+             'A'
+           when 80...89
+             'B'
+           when 70...79
+             'C'
+           when 60...69
+             'D'
+           else
+             'F'
+           end
+
+puts "Elle a obtenu #{notation}."
 
 puts "3. Vérifiez si un nombre est pair ou impair"
 nombre = 17
@@ -112,9 +140,20 @@ nombre = 17
 if nombre % 2 === 0
   puts 'It is a pair number'
 else
-  puts 'It is impair number'
+  puts 'It is an odd number'
 end
 
 puts "4. Déterminez la catégorie d'âge d'une personne"
 age_personne = 35
 # Votre code ici (enfant: 0-12, ado: 13-17, adulte: 18-64, senior: 65+)
+if age_personne >= 0 && age_personne <= 12
+  response = 'enfant'
+elsif age_personne >= 13 && age_personne <= 17
+  response = 'ado'
+elsif age_personne >= 18 && age_personne <= 64
+  response = 'adulte'
+else
+  response= 'senior'
+end
+
+puts "C'est un #{response}"

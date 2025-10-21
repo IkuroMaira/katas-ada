@@ -38,6 +38,7 @@ fruits.each do |fruit|
 end
 
 # 6. Each avec hash
+# Un hash en Ruby, c'est comme un objet JavaScript : une collection de paires clé-valeur.
 puts "\n6. Each avec hash:"
 ages = { "Alice" => 25, "Bob" => 30, "Claire" => 28 }
 ages.each do |nom, age|
