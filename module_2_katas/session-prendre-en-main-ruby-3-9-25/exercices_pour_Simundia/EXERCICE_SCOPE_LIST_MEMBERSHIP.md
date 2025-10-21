@@ -186,22 +186,22 @@ has_many :bookings, -> { where.not(status: :unplanned) }
 
 ```ruby
 context 'when deleting the last remaining booking' do
-  let(:booking) { relationship.bookings.first }
+   let(:booking) { relationship.bookings.first }
 
-  before do
-    # S'assurer qu'il n'y a qu'un seul booking actif
-    relationship.bookings.where.not(id: booking.id).destroy_all
-  end
+   before do
+      # S'assurer qu'il n'y a qu'un seul booking actif
+      relationship.bookings.where.not(id: booking.id).destroy_all
+   end
 
-  it 'changes scope_list_membership status to started' do
-    expect { use_case }.to change { relationship.scope_list_membership.reload.status }
-      .to('started')
-  end
+   it 'changes scope_list_membership status to started' do
+      expect { use_case }.to change { relationship.scope_list_membership.reload.status }
+                                     .to('started')
+   end
 
-  it 'has no remaining bookings after deletion' do
-    use_case
-    expect(relationship.reload.bookings).to be_empty
-  end
+   it 'has no remaining bookings after deletion' do
+      use_case
+      expect(relationship.reload.bookings).to be_empty
+   end
 end
 ```
 
