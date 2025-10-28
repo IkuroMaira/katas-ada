@@ -53,7 +53,7 @@ class TodoList < ApplicationRecord
   # Statuts possibles
   enum status: {
     not_started: 0,   # Jamais commencé
-    started: 1,       # Commencé mais plus de tâches actives
+    started: 1,       # Commencé, mais plus de tâches actives
     in_progress: 2,   # Des tâches sont actives
     completed: 3      # Tout est terminé
   }
@@ -135,15 +135,15 @@ class CreateTasks < ActiveRecord::Migration[8.0]
     create_table :tasks do |t|
       t.string :title, null: false
       t.integer :status, default: 0, null: false
-      t.references :project, null: false, foreign_key: true
+      t.references :project, null: false, foreign_key: true # Crée automatiquement un index sur project_id
       t.integer :position, default: 1, null: false
       t.datetime :due_date
 
       t.timestamps
     end
 
-    add_index :tasks, [:project_id, :status]
-    add_index :tasks, [:project_id, :position]
+    add_index :tasks, [:project_id, :status] # Permet d'aller directement sur les colonnes concernées et évite de lire toutes les colonnes
+    add_index :tasks, [:project_id, :position] # Index composite (plusieurs colonnes): pour des requêtes qui filtrent sur plusieurs colonnes
   end
 end
 ```
